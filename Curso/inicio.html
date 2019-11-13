@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Curso Web</title>
+    <link rel="stylesheet" href="Content/bootstrap.min.css" />
     <link rel="stylesheet" href="Content/Site.css" />
     <style>
         article {
@@ -19,17 +20,26 @@
             <a href="contacto.html">Contacto</a>
         </nav>
     </header>
-    <main>
-        <article class="miclase otra">
-            El Banco Mundial publica el informe Doing Business que analiza las condiciones para realizar negocios en 190 países
-        </article>
-        <article>
-            El desempleo se redujo en 111.600 personas en los últimos doce meses, situándose en 3.214.400 (-3,36%), según los datos de la Encuesta de Población Activa (EPA) publicados hoy por el Instituto Nacional de Estadística (INE). Con esta reducción la tasa de paro cae por debajo del 14% (13,92%), la más baja en más de una década.
-        </article>
+    <main class="container-fluid">
+        <div class="row">
+            <article class="col-sm-12 col-md-3 miclase otra">
+                El Banco Mundial publica el informe Doing Business que analiza las condiciones para realizar negocios en 190 países
+            </article>
+            <article class="col-sm-12 col-md-6">
+                El desempleo se redujo en 111.600 personas en los últimos doce meses, situándose en 3.214.400 (-3,36%), según los datos de la Encuesta de Población Activa (EPA) publicados hoy por el Instituto Nacional de Estadística (INE).
+            </article>
+            <article class="col-sm-12 col-md-3">
+                Con esta reducción la tasa de paro cae por debajo del 14% (13,92%), la más baja en más de una década.
+            </article>
+        </div>
     </main>
+    <input type="button" value="Aceptar" />
 
     <footer>
         Aviso Legal Protección de Datos Accesibilidad RSS Mapa Web
     </footer>
+
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
 </body>
 </html>

@@ -39,3 +39,8 @@ footer {
     color: white;
 }
 
+@media print {
+    input[type=button] {
+        display: none;
+    }
+}
