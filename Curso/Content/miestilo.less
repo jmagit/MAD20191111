@@ -1,0 +1,24 @@
+﻿@colorError: red;
+@colorBorder: magenta;
+
+.bordered {
+    border-top: dotted 1px black;
+    border-bottom: solid 2px black;
+}
+
+body {
+    border-color: @colorError;
+    .bordered;
+    img {
+
+    }
+}
+
+.msgError {
+    color: @colorError;
+}
+#logo {
+    background-color: @colorBorder;
+    .bordered;
+}
+
