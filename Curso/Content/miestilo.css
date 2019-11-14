@@ -1,0 +1,17 @@
+﻿.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+body {
+  border-color: red;
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+.msgError {
+  color: red;
+}
+#logo {
+  background-color: magenta;
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
