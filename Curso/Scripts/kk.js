@@ -156,3 +156,29 @@ b = ++a; i < ++a
 
 a += b + ' unidad' + b > 1 ? 'es' : '' + 'algo';
 
+
+function suma(a, b) { return a + b; }
+
+var l = [1, 2];
+var [a, b] = l;
+
+rslt = suma(l[0], l[1]);
+rslt = suma(...l);
+
+o = { a: 1, b: 2 };
+
+rslt = suma(o.a, o.b);
+rslt = suma(...o);
+
+l.find(function (item) { return item.nombre === 'Pepito' });
+l.find(item => item.nombre === 'Pepito');
+(a, b) => { // ...
+    return item.nombre === 'Pepito';
+}
+
+let fn = item => item.nombre === 'Pepito';
+
+o = { a: 1, b: 2, m: item => item.nombre === 'Pepito' };
+var x = 10, y = 20;
+let p = { x: x, y: y };
+p = { x, y, kk };

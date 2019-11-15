@@ -92,8 +92,9 @@
             </article>
         </div>
     </main>
-    <input class="btn btn-link" type="button" value="Aceptar" />
+    <input id="btnAceptar" class="btn btn-link" type="button" value="Aceptar" />
     <div class="button" role="button" tabindex="1">Algo</div>
+    <div id="rslt"></div>
     <footer>
         Aviso Legal Protección de Datos Accesibilidad RSS Mapa Web
         <button type="button" class="btn btn-default" aria-label="Left Align">
@@ -125,15 +126,44 @@
             this.alga = function () { this.edad }
         }
         var p = new Persona('Pepito', 'Grillo', 199);
-        var c = new Persona('Carmelo', 'Coton', 55);
+        let c = new Persona('Carmelo', 'Coton', 55);
         d = Persona('Carmelo', 'Coton', 55);
         c.nombreCompleto = function () {
-            return this.apellidos + ', ' + this.nombre;
+            return `Su nombre ${this.apellidos},    ${this.nombre}`;
         }
-        debugger;
         console.log(p.nombreCompleto());
+        //var 19 = 3;
         console.log(c.nombreCompleto());
         console.log(p.nombreCompleto.call(c));
+    </script>
+    <script>
+        function saludar(e) {
+            // window.alert('Hola Mundo');
+            //document.getElementById('rslt').textContent = 'Hola Mundo';
+            var cad = '<ol>';
+            for (var i = 0; ++i < 10;) {
+                cad += '<li>Elemento ' + i + '</li>';
+            }
+            cad += '</ol>';
+            document.getElementById('rslt').innerHTML = cad;
+            document.getElementById('btnAceptar')
+                .removeEventListener('click', saludar);
+            document.getElementById('btnAceptar')
+                .addEventListener('click', despide);
+        }
+
+        function despide() {
+            document.getElementById('rslt').textContent = 'Adiossss';
+            document.getElementById('btnAceptar')
+                .removeEventListener('click', despide);
+            document.getElementById('btnAceptar')
+                .addEventListener('click', saludar);
+       }
+
+        window.onload = function () {
+            document.getElementById('btnAceptar')
+                .addEventListener('click', saludar);
+        }
     </script>
 </body>
 </html>
