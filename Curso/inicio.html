@@ -92,8 +92,8 @@
             </article>
         </div>
     </main>
-    <input id="btnAceptar" class="btn btn-link" type="button" value="Aceptar" />
-    <div class="button" role="button" tabindex="1">Algo</div>
+    <input id="btnAceptar" class="btn btn-link mete-controlador" type="button" value="Aceptar" />
+    <div id="noBoton" class="button mete-controlador" role="button" tabindex="1">Algo</div>
     <div id="rslt"></div>
     <footer>
         Aviso Legal Protección de Datos Accesibilidad RSS Mapa Web
@@ -163,6 +163,13 @@
         window.onload = function () {
             document.getElementById('btnAceptar')
                 .addEventListener('click', saludar);
+            document.getElementById('noBoton')
+                .addEventListener('click', function () {
+                    document.getElementById('btnAceptar').disabled = true;
+                    //document.getElementById('btnAceptar').focus();
+                });
+            $('img.hidden-xs').one('click', function () { window.alert('Fotoooo'); });
+            $('.glyphicon').one('click', function () { window.alert('Fotoooo'); });
         }
     </script>
 </body>
