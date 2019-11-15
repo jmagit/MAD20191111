@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="Content/bootstrap.min.css" />
     <style>
         .button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -103,5 +103,37 @@
 
     <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <script>
+        function Persona(n, a, e) {
+            var o = this;
+            var edad = e;
+            this.nombre = n;
+            this.apellidos = a;
+            this.nombreCompleto = function () {
+                return o.nombre + ' ' + this.apellidos;
+            }
+            this.dameEdad = function () { return edad; }
+            this.ponEdad = function (nueva) {
+                if (!nueva && isNaN(+nueva) && nueva > 0) {
+                    throw new Error('la edad es invalida');
+                }
+                edad = nueva;
+            }
+            this.cumple = function () {
+                ++edad;
+            }
+            this.alga = function () { this.edad }
+        }
+        var p = new Persona('Pepito', 'Grillo', 199);
+        var c = new Persona('Carmelo', 'Coton', 55);
+        d = Persona('Carmelo', 'Coton', 55);
+        c.nombreCompleto = function () {
+            return this.apellidos + ', ' + this.nombre;
+        }
+        debugger;
+        console.log(p.nombreCompleto());
+        console.log(c.nombreCompleto());
+        console.log(p.nombreCompleto.call(c));
+    </script>
 </body>
 </html>

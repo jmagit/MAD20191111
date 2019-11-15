@@ -3,13 +3,24 @@
     var edad = e;
     this.nombre = n;
     this.apellidos = a;
-    this.edad = function () { return edad; }
     this.nombreCompleto = function () {
         return o.nombre + ' ' + this.apellidos;
     }
+    this.dameEdad = function () { return edad; }
+    this.ponEdad = function (nueva) {
+        if (!nueva && isNaN(+nueva) && nueva > 0) {
+            throw new Error('la edad es invalida');
+        }
+        edad = nueva;
+    } 
     this.cumple = function () {
         ++edad;
     }
+    this.alga = function () { this.edad }
+}
+
+function personaliza(p1, p2, p3) {
+    this.nombre = this.nombre.toUpperCase();
 }
 
 var p = new Persona('Pepito', 'Grillo', 199);
@@ -18,12 +29,27 @@ d = Persona('Carmelo', 'Coton', 55);
 c.nombreCompleto = function () {
     return this.apellidos + ', ' + this.nombre;
 }
+
+personaliza.call(p, p1, p2, p3);
+personaliza.apply(p, [p1, p2, p3]);
+personaliza.bind(c);
+personaliza(p1, p2, p3);
+
+p.nombreCompleto.call(c)
 p.nombreCompleto.bind(c);
 
 p.nombreCompleto();
 c.nombreCompleto();
 
 p.nombre = 4;
+p.edad = 33;
+try {
+    p.ponEdad();
+
+} catch (e) {
+    console.error(e.message);
+}
+
 cmp = "edad";
 p[cmp] = 'viejisimo';
 
@@ -101,21 +127,24 @@ kk = 4;
 kk = function (a, b) { return a+b; }
 
 kk(4, 4);
-
+var operacion = 'a';
 a = 1;
 b = '2$2';
+operacion += ' + b';
 NoEsNumero = isNaN(parseFloat(b))
 NoEsNumero = typeof (b) == "number";
 c = +a + +b;
+if(a > b) operacion += ' - c';
 isNaN(parseFloat(b))
 a = -a;
 b = +b;
 
 a += 2;
 a = aa + 2;
-
-
-a == 1 && b = 12;
+operacion = 'a + ' + leido; // b; p.muerete();
+rslt = eval(operacion);
+rslt == (a + b)
+rslt = a == 1 && b = 12;
 
 a === 1 && bb
 bb = 4
@@ -126,3 +155,4 @@ a += 1; a = a + 1;
 b = ++a; i < ++a
 
 a += b + ' unidad' + b > 1 ? 'es' : '' + 'algo';
+
