@@ -1,0 +1,2 @@
+https://go.microsoft.com/fwlink/?linkid=853017
+https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksLT2017.bak
