@@ -34,7 +34,8 @@ namespace Nuevo.Controllers {
             if (modo.ToLower() == "corto") {
                 return View("DemoCorto", list);
             } else if (modo.ToLower() == "json") {
-                return Json(list.Select(p => new { nombre = p.FirstName, apellidos = p.LastName}), JsonRequestBehavior.AllowGet);
+                return Json(list.Select(p => new { nombre = p.FirstName, apellidos = p.LastName}), 
+                    JsonRequestBehavior.AllowGet);
             } else
                 return View(list);
             }

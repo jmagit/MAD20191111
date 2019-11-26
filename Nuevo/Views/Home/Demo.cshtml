@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Nuevo.Models.Customer>
 
 @{
-    ViewBag.Title = "Demo";
+    ViewBag.Title = ViewData["Titulo"];
 }
 
-<h2>Demo</h2>
+<h2>@ViewBag.Titulo</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
