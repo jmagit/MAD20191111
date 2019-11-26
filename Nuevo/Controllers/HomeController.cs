@@ -24,6 +24,7 @@ namespace Nuevo.Controllers {
         }
 
         public ActionResult Demo(string modo = "largo") {
+            ViewBag.Titulo = "Demos de controladores";
             AWEntities db = new AWEntities();
             var list = db.Customers.Where(p => p.FirstName.StartsWith("S") && p.Title == "Ms.")
                     .OrderBy(p => p.LastName)
@@ -33,7 +34,7 @@ namespace Nuevo.Controllers {
             if (modo.ToLower() == "corto") {
                 return View("DemoCorto", list);
             } else if (modo.ToLower() == "json") {
-                return Json(list);
+                return Json(list.Select(p => new { nombre = p.FirstName, apellidos = p.LastName}), JsonRequestBehavior.AllowGet);
             } else
                 return View(list);
             }
