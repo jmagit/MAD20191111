@@ -23,14 +23,19 @@ namespace Nuevo.Controllers {
             return View();
         }
 
-        public ActionResult Demo() {
+        public ActionResult Demo(string modo = "largo") {
             AWEntities db = new AWEntities();
             var list = db.Customers.Where(p => p.FirstName.StartsWith("S") && p.Title == "Ms.")
-                    .OrderBy(p=> p.LastName)
+                    .OrderBy(p => p.LastName)
                     .Skip(5)
                     .Take(5)
                     .ToList();
-            return View("DemoCorto", list);
+            if (modo.ToLower() == "corto") {
+                return View("DemoCorto", list);
+            } else if (modo.ToLower() == "json") {
+                return Json(list);
+            } else
+                return View(list);
+            }
         }
     }
-}

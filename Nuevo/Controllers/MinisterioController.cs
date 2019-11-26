@@ -13,5 +13,9 @@ namespace Nuevo.Controllers
         {
             return View();
         }
+        public ActionResult Contacto()
+        {
+            return View();
+        }
     }
 }
