@@ -30,7 +30,7 @@ namespace Nuevo.Controllers {
                     .Skip(5)
                     .Take(5)
                     .ToList();
-            return View(list);
+            return View("DemoCorto", list);
         }
     }
 }
