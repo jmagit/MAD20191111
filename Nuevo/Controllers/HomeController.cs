@@ -23,14 +23,14 @@ namespace Nuevo.Controllers {
             return View();
         }
 
-        public ActionResult Kk() {
+        public ActionResult Demo() {
             AWEntities db = new AWEntities();
-            var list = db.Customers.Where(p => p.FirstName.StartsWith("S"))
+            var list = db.Customers.Where(p => p.FirstName.StartsWith("S") && p.Title == "Ms.")
                     .OrderBy(p=> p.LastName)
                     .Skip(5)
                     .Take(5)
                     .ToList();
-            return View();
+            return View(list);
         }
     }
 }
