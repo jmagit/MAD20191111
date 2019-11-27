@@ -74,10 +74,13 @@ namespace Nuevo.Controllers {
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "CustomerID,NameStyle,Title,FirstName,MiddleName,LastName,Suffix,CompanyName,SalesPerson,EmailAddress,Phone,PasswordHash,PasswordSalt,rowguid,ModifiedDate")] Customer customer) {
             if (ModelState.IsValid) {
-                db.Entry(customer).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                //db.Entry(customer).State = EntityState.Modified;
+                //db.SaveChanges();
+                //return RedirectToAction("Index");
             }
+            ModelState.AddModelError("", "Error que aparece en el sumario");
+            ModelState.AddModelError("FirstName", "Error que aparece en el FirstName");
+
             return View(customer);
         }
 
