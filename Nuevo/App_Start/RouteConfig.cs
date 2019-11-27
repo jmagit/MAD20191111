@@ -8,7 +8,18 @@ using System.Web.Routing;
 namespace Nuevo {
     public class RouteConfig {
         public static void RegisterRoutes(RouteCollection routes) {
+            routes.MapMvcAttributeRoutes();
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                name: "Demo",
+                url: "esta/me/la/invento/{modo}",
+                defaults: new { 
+                    controller = "Home", 
+                    action = "Demo", 
+                    modo = "corto" }
+            );
 
             routes.MapRoute(
                 name: "Default",
