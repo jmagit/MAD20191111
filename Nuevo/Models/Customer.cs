@@ -11,7 +11,8 @@ namespace Nuevo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,12 +25,21 @@ namespace Nuevo.Models
         public int CustomerID { get; set; }
         public bool NameStyle { get; set; }
         public string Title { get; set; }
+        [Required]
+        [StringLength(maximumLength: 50)]
+        [Display(Name = "Nombre")]
         public string FirstName { get; set; }
+        [StringLength(maximumLength: 50)]
         public string MiddleName { get; set; }
+        [Required]
+        [StringLength(maximumLength: 50)]
+        [Display(Name = "Apellidos")]
         public string LastName { get; set; }
         public string Suffix { get; set; }
+        [DataType(DataType.MultilineText)]
         public string CompanyName { get; set; }
         public string SalesPerson { get; set; }
+        [DataType(DataType.EmailAddress)]
         public string EmailAddress { get; set; }
         public string Phone { get; set; }
         public string PasswordHash { get; set; }
