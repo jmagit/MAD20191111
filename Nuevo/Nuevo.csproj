@@ -217,6 +217,7 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\partial\Customer.partial.cs" />
     <Compile Include="Models\Product.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
