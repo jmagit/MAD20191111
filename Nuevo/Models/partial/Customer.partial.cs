@@ -30,6 +30,8 @@ namespace Nuevo.Models {
         public string PasswordSalt { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
+        public virtual ICollection<CustomerAddress> CustomerAddresses { get; set; }
+        public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
     }
 
     [MetadataType(typeof(CustomerMetadata))]
@@ -42,11 +44,11 @@ namespace Nuevo.Models {
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext) {
             var validationResults = new List<ValidationResult>();
-            var context = new ValidationContext(this, null, null);
-            Validator.TryValidateObject(this,
-                      context,
-                      validationResults,
-                      true);
+            //var context = new ValidationContext(this, null, null);
+            //Validator.TryValidateObject(this,
+            //          context,
+            //          validationResults,
+            //          true);
 
             if(FirstName != null && FirstName.ToUpper() != FirstName ) {
                 validationResults.Add(

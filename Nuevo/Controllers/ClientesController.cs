@@ -78,8 +78,8 @@ namespace Nuevo.Controllers {
                 //db.SaveChanges();
                 //return RedirectToAction("Index");
             }
-            ModelState.AddModelError("", "Error que aparece en el sumario");
-            ModelState.AddModelError("FirstName", "Error que aparece en el FirstName");
+            ModelState.AddModelError("", "Hay errores de validacion");
+            //ModelState.AddModelError("FirstName", "Error que aparece en el FirstName");
 
             return View(customer);
         }
