@@ -9,6 +9,7 @@
 
 namespace Nuevo.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -21,6 +22,7 @@ namespace Nuevo.Models
         public System.DateTime ModifiedDate { get; set; }
     
         public virtual Address Address { get; set; }
+        [JsonIgnore]
         public virtual Customer Customer { get; set; }
     }
 }

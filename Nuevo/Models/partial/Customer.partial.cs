@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace Nuevo.Models {
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
         public virtual ICollection<CustomerAddress> CustomerAddresses { get; set; }
+        [JsonIgnore]
         public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
     }
 
@@ -44,13 +46,13 @@ namespace Nuevo.Models {
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext) {
             var validationResults = new List<ValidationResult>();
-            //var context = new ValidationContext(this, null, null);
+            var context = new ValidationContext(this, null, null);
             //Validator.TryValidateObject(this,
             //          context,
             //          validationResults,
-            //          true);
-
-            if(FirstName != null && FirstName.ToUpper() != FirstName ) {
+            //          false);
+            
+            if (FirstName != null && FirstName.ToUpper() != FirstName ) {
                 validationResults.Add(
                     new ValidationResult("Tiene que estar en mayúsculas", 
                     new string[] { "FirstName" } ));
