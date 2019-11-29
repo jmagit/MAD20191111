@@ -17,6 +17,7 @@ namespace Nuevo.Controllers
             return View();
         }
         //[Route("contact")]
+        [Authorize]
         public ActionResult Contacto()
         {
             return View();

@@ -12,7 +12,7 @@ namespace Nuevo.Controllers {
         }
 
         public ActionResult About() {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Esto es una demo.";
 
             return View();
         }
