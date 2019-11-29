@@ -33,6 +33,7 @@ namespace Nuevo.Models {
         public System.DateTime ModifiedDate { get; set; }
         public virtual ICollection<CustomerAddress> CustomerAddresses { get; set; }
         [JsonIgnore]
+        [System.Xml.Serialization.XmlIgnore]
         public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
     }
 

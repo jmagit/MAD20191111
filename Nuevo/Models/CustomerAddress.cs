@@ -23,6 +23,7 @@ namespace Nuevo.Models
     
         public virtual Address Address { get; set; }
         [JsonIgnore]
+        [System.Xml.Serialization.XmlIgnore]
         public virtual Customer Customer { get; set; }
     }
 }
